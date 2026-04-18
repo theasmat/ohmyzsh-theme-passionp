@@ -7,7 +7,6 @@ An oh-my-zsh theme;
 
 ### Feature
 
-* real time prompt;
 * command running time cost prompt;
 * command running error hint;
 * git status prompt;
@@ -29,7 +28,7 @@ An oh-my-zsh theme;
 
 ##### macOS, command not found: gdate
 
-* passion.zsh-theme depends on cmd ```gdate``` to get current time in milliseconds. get ```gdate``` on macOS by running ```brew install coreutils``` then ```source ~/.zshrc```;
+* passion.zsh-theme depends on cmd ```gdate``` to calculate command running time cost in milliseconds. get ```gdate``` on macOS by running ```brew install coreutils``` then ```source ~/.zshrc```;
 * see also: [#12](https://github.com/ChesterYue/ohmyzsh-theme-passion/issues/12);
 
 ##### Linux, command not found: bc
