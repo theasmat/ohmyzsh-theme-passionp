@@ -14,8 +14,14 @@ curl -fsSL https://raw.githubusercontent.com/theasmat/ohmyzsh-theme-passionp/mas
 
 ### Feature
 
-* command running error hint;
-* git status prompt;
+* ⚡ **Root Awareness**: Bright red warnings when operating as root.
+* 🐍 **Virtual Environments**: Auto-detects and displays Python (`VIRTUAL_ENV`/`conda`) and Node.js (`nvm`) loaded environments.
+*  **Cloud Context**: Displays active AWS Profiles (`$AWS_PROFILE`).
+*  **Read-Only Protection**: Displays a locked icon when navigating to immutable directories.
+* ⏱ **Smart Execution Timer**: Native high-precision command durations slide into `RPROMPT`.
+*  **Background Jobs**: Tracks suspended active background jobs dynamically.
+*  **Smart Exit Codes**: Exact numerical shell failure codes output directly in the prompt on crash.
+* 🎨 **Full Nerd Font Support**: Uses industry-standard semantic typography.
 
 ## Usage
 
@@ -52,8 +58,9 @@ curl -fsSL https://raw.githubusercontent.com/theasmat/ohmyzsh-theme-passionp/mas
 
 ##### Font
 
-* install [JetBrains Mono](https://www.jetbrains.com/lp/mono/);
-* iTerm2: settings -> Appearance && settings -> Profiles -> Text -> Font
+* ⚠️ **REQUIREMENT**: You *MUST* install and use a [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for all the icons to render correctly.
+* **Top Recommendations**: We highly recommend [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode), [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono), or [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack).
+* macos iTerm2 users: settings -> Appearance && settings -> Profiles -> Text -> Font -> choose your Nerd Font.
 
 </details> <!-- markdownlint-disable-line -->
 
