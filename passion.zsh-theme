@@ -5,22 +5,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     {
         gdate
     } || {
-        echo "\n$fg_bold[yellow]passion.zsh-theme depends on cmd [gdate] to get current time in milliseconds$reset_color"
+        echo "\n$fg_bold[yellow]passion.zsh-theme depends on cmd [gdate] to calculate command running time cost in milliseconds$reset_color"
         echo "$fg_bold[yellow][gdate] is not installed by default in macOS$reset_color"
         echo "$fg_bold[yellow]to get [gdate] by running:$reset_color"
         echo "$fg_bold[green]brew install coreutils;$reset_color";
         echo "$fg_bold[yellow]\nREF: https://github.com/ChesterYue/ohmyzsh-theme-passion#macos\n$reset_color"
     }
 fi
-
-
-# time
-function real_time() {
-    local color="%{$fg_no_bold[cyan]%}";                    # color in PROMPT need format in %{XXX%} which is not same with echo
-    local time="[$(date +%H:%M:%S)]";
-    local color_reset="%{$reset_color%}";
-    echo "${color}${time}${color_reset}";
-}
 
 
 # login_info
@@ -115,11 +106,6 @@ output_command_execute_after() {
     local color_reset="$reset_color";
     cmd="${color_cmd}${cmd}${color_reset}"
 
-    # time
-    local time="[$(date +%H:%M:%S)]"
-    local color_time="$fg_no_bold[cyan]";
-    time="${color_time}${time}${color_reset}";
-
     # cost
     local time_end="$(current_time_millis)";
     local cost=$(bc -l <<<"${time_end}-${COMMAND_TIME_BEGIN}");
@@ -133,7 +119,7 @@ output_command_execute_after() {
     local color_cost="$fg_no_bold[cyan]";
     cost="${color_cost}${cost}${color_reset}";
 
-    echo -e "${time} ${cost} ${cmd}";
+    echo -e "${cost} ${cmd}";
     echo -e "";
 }
 
@@ -210,5 +196,5 @@ TRAPALRM() { # cspell:disable-line
 
 
 # prompt
-# PROMPT='$(real_time) $(login_info) $(directory) $(git_status)$(command_status) ';
-PROMPT='$(real_time) $(directory) $(git_status)$(command_status) ';
+# PROMPT='$(login_info) $(directory) $(git_status)$(command_status) ';
+PROMPT='$(directory) $(git_status)$(command_status) ';
